@@ -15,7 +15,7 @@ public class Test4_1CreateService extends cloud.autotests.tests.vlife.cms.MainTe
     String smth = "Окрашивание волос №" + randNum.nextInt(1000);
     @Order(6)
     @Test
-    @Tag("ui")
+    @Tag("web")
     void  createService() {
 
         step("Окрыть сайт", () -> {

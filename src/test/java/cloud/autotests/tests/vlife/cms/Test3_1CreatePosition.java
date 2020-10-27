@@ -15,7 +15,7 @@ import static org.openqa.selenium.By.className;
 public class Test3_1CreatePosition extends cloud.autotests.tests.vlife.cms.MainTest {
 
     @Test
-    @Tag("ui")
+    @Tag("web")
     @Order(3)
     @AllureId("20")
     @DisplayName("Создать должность")

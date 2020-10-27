@@ -21,7 +21,7 @@ public class Test1_1CreateClient extends cloud.autotests.tests.vlife.cms.MainTes
 
 
     @Test
-    @Tag("ui")
+    @Tag("web")
     @Order(1)
     @AllureId("16")
     @DisplayName("Добавить клиента cms.vlife.kz")

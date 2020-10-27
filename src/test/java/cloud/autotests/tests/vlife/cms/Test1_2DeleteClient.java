@@ -17,7 +17,7 @@ public class Test1_2DeleteClient extends cloud.autotests.tests.vlife.cms.MainTes
     String phonenumb = "7701-856-9878";
 
     @Test
-    @Tag("ui")
+    @Tag("web")
     @Order(2)
     @AllureId("17")
     @DisplayName("Удалить клиента")

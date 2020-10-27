@@ -16,7 +16,7 @@ import static org.openqa.selenium.By.className;
 public class Test3_3DeletePosition extends cloud.autotests.tests.vlife.cms.MainTest {
 
     @Test
-    @Tag("ui")
+    @Tag("web")
     @Order(5)
     @AllureId("28")
     @DisplayName("Удалить должность")

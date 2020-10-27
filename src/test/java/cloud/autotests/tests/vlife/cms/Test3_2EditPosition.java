@@ -15,7 +15,7 @@ import static org.openqa.selenium.By.className;
 public class Test3_2EditPosition extends cloud.autotests.tests.vlife.cms.MainTest {
 
     @Test
-    @Tag("ui")
+    @Tag("web")
     @Order(4)
     @AllureId("27")
     @DisplayName("Редактировать должность ")
