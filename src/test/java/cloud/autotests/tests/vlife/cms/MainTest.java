@@ -9,6 +9,7 @@ import org.openqa.selenium.By;
 import java.util.Random;
 
 import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.open;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class MainTest {
@@ -37,7 +38,7 @@ public class MainTest {
     }
 
     public void openSite(){ //открыть сайт
-        Selenide.open("https://cms.dev.vlife.kz/auth/signin");
+        open("https://cms.dev.vlife.kz/auth/signin");
     }
 
     public void service(){ //выбрать раздел услуги
