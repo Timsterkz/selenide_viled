@@ -11,7 +11,7 @@ import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.step;
 import static org.openqa.selenium.By.className;
 
-public class Test3_1CreatePosition extends cloud.autotests.tests.vlife.cms.MainTest {
+class Test3_1CreatePosition extends TestBase {
 
     @Test
     @Tag("web")

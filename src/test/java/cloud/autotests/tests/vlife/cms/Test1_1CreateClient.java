@@ -12,7 +12,7 @@ import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.step;
 
 
-public class Test1_1CreateClient extends cloud.autotests.tests.vlife.cms.MainTest {
+class Test1_1CreateClient extends TestBase {
 
 
     String firstName = "Testing" + randNum.nextInt(100);

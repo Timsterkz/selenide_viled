@@ -9,7 +9,7 @@ import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.step;
 
 
-public class Test4_1CreateService extends cloud.autotests.tests.vlife.cms.MainTest {
+class Test4_1CreateService extends TestBase {
 
     String smth = "Окрашивание волос №" + randNum.nextInt(1000);
     @Order(6)

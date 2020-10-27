@@ -1,6 +1,6 @@
 package cloud.autotests.tests.web;
 
-import cloud.autotests.tests.TestBase;
+import cloud.autotests.tests.vlife.cms.TestBase;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Story;
 import org.junit.jupiter.api.DisplayName;

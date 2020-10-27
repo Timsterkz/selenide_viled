@@ -12,7 +12,7 @@ import static io.qameta.allure.Allure.step;
 import static org.openqa.selenium.By.className;
 
 
-public class Test3_3DeletePosition extends cloud.autotests.tests.vlife.cms.MainTest {
+class Test3_3DeletePosition extends TestBase {
 
     @Test
     @Tag("web")

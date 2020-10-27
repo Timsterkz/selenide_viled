@@ -11,7 +11,7 @@ import org.openqa.selenium.By;
 import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.step;
 
-public class Test1_2DeleteClient extends cloud.autotests.tests.vlife.cms.MainTest {
+class Test1_2DeleteClient extends TestBase {
     String firstName = "Testing" + randNum.nextInt(100) + randNum.nextInt(100);
     String phonenumb = "7701-856-9878";
 
