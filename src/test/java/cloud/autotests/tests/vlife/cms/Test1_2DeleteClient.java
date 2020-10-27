@@ -8,8 +8,7 @@ import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.closeWebDriver;
+import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.step;
 
 public class Test1_2DeleteClient extends cloud.autotests.tests.vlife.cms.MainTest {
@@ -23,7 +22,7 @@ public class Test1_2DeleteClient extends cloud.autotests.tests.vlife.cms.MainTes
     @DisplayName("Удалить клиента")
     void deletedClient() {
         step("Открыть сайт", () -> {
-            openSite();
+            open("https://cms.dev.vlife.kz/auth/signin");
         });
         step("Авторизация", () -> {
             login("foruitest@gmail.com", "TeSt0vIyPaS5");

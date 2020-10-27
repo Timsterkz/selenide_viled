@@ -37,9 +37,6 @@ public class MainTest {
         $(By.id("2")).pressEnter();
     }
 
-    public void openSite(){ //открыть сайт
-        open("https://cms.dev.vlife.kz/auth/signin");
-    }
 
     public void service(){ //выбрать раздел услуги
         $(By.className("css-htdjeo")).click();

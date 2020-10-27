@@ -7,8 +7,7 @@ import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.closeWebDriver;
+import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.step;
 import static org.openqa.selenium.By.className;
 
@@ -22,7 +21,7 @@ public class Test3_3DeletePosition extends cloud.autotests.tests.vlife.cms.MainT
     @DisplayName("Удалить должность")
     void deletePosition() {
         step("Открыть сайт", () -> {
-            openSite();
+            open("https://cms.dev.vlife.kz/auth/signin");
         });
         step("Авторизация", () -> {
             login("foruitest@gmail.com", "TeSt0vIyPaS5");
