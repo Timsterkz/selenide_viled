@@ -103,6 +103,13 @@ task ios(type: Test) {
     systemProperty 'platform', 'ios'
 }
 
+task ui(type: Test) {
+    useJUnitPlatform {
+        includeTags 'ui'
+    }
+    systemProperty 'platform', 'web'
+}
+
 help {
     doFirst {
         println ""
