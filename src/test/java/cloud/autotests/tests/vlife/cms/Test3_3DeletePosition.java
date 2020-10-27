@@ -58,7 +58,6 @@ class Test3_3DeletePosition extends TestBase {
             $(By.xpath("//*[contains(text(),'Удалить')]")).click();
         });
 
-        closeWebDriver();
 
     }
 }

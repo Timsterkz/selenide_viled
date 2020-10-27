@@ -82,6 +82,5 @@ class Test1_2DeleteClient extends TestBase {
 
         });
 
-        closeWebDriver();
     }
 }

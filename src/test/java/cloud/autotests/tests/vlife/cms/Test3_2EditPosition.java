@@ -62,6 +62,5 @@ class Test3_2EditPosition extends TestBase {
             });
 //        $("body").shouldHave(Condition.text("Прически, укладки и покраска волос"));
 
-        closeWebDriver();
     }
 }

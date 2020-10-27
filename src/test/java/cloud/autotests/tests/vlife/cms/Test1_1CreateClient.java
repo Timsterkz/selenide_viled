@@ -80,8 +80,6 @@ class Test1_1CreateClient extends TestBase {
 //            $("body").shouldHave(Condition.text(firstName));
         });
 
-        closeWebDriver();
-
 
 
     }

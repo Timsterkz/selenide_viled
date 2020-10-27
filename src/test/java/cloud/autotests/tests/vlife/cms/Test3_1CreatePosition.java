@@ -45,6 +45,6 @@ class Test3_1CreatePosition extends TestBase {
             $(By.xpath("//*[contains(text(),'Сохранить')]")).click();
         });
 //        $("body").shouldHave(Condition.text("Парикмахер"));
-        closeWebDriver();
+
     }
 }

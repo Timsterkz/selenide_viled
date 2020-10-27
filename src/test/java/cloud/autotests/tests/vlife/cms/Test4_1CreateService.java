@@ -57,6 +57,5 @@ class Test4_1CreateService extends TestBase {
 
         });
 
-        closeWebDriver();
     }
 }
