@@ -1,5 +1,6 @@
 package cloud.autotests.tests.vlife.cms;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -13,6 +14,7 @@ class Test4_1CreateService extends TestBase {
 
     String smth = "Окрашивание волос №" + randNum.nextInt(1000);
     @Order(6)
+    @Disabled
     @Test
     @Tag("web")
     void  createService() {
