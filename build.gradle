@@ -38,10 +38,11 @@ allure {
 
 dependencies {
     testImplementation (
+            "org.aeonbits.owner:owner:1.0.12",
             "org.aspectj:aspectjweaver:1.9.5",
             "com.codeborne:selenide:${selenideVersion}",
             "io.qameta.allure:allure-selenide:${allureVersion}",
-            "io.rest-assured:rest-assured:4.1.2",
+            "io.rest-assured:rest-assured:4.3.1",
             "io.qameta.allure:allure-rest-assured:${allureVersion}",
             "com.fasterxml.jackson.core:jackson-annotations:2.10.3",
             "io.appium:java-client:7.3.0",
