@@ -1,14 +1,13 @@
 package web_autotests_cms_market.tests.testCabinetManager.testOrder;
 
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Order;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import web_autotests_cms_market.steps.TestBase;
 import web_autotests_cms_market.steps.stepsCabinetManager.stepsOrder.AllOrderSteps;
 import web_autotests_cms_market.tests.testCabinetManager.testPartners.CabinetManagerBaseTest;
 
 import static io.qameta.allure.Allure.step;
 
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class AllOrderTests extends CabinetManagerBaseTest {
     @Test
     @Order(1)

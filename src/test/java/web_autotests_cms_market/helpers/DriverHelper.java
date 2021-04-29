@@ -21,10 +21,11 @@ public class DriverHelper {
         if (isWeb) {
             Configuration.browser = CustomWebDriver.class.getName();
             Configuration.baseUrl = webUrl;
+            Configuration.startMaximized = true;
         } else if (isAndroid || isIos) {
             Configuration.startMaximized = true;
-            WebDriver driver = new ChromeDriver();
-            driver.manage().window().maximize();
+//            WebDriver driver = new ChromeDriver();
+//            driver.manage().window().maximize();
 
 //            Configuration.browserSize = null;
         }

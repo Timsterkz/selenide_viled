@@ -1,8 +1,6 @@
 package web_autotests_cms_market.tests.testCabinetManager.testCategory;
 
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Order;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import web_autotests_cms_market.steps.TestBase;
 import web_autotests_cms_market.steps.stepsCabinetLogist.DeliveryActualSteps;
 import web_autotests_cms_market.steps.stepsCabinetManager.stepsCategory.CategoryConfigurationSteps;
@@ -10,6 +8,7 @@ import web_autotests_cms_market.tests.testCabinetManager.testPartners.CabinetMan
 
 import static io.qameta.allure.Allure.step;
 
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class CategoryConfigurationTests extends CabinetManagerBaseTest {
     @Test
     @Order(1)

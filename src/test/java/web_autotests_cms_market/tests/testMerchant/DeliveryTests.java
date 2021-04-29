@@ -1,8 +1,6 @@
 package web_autotests_cms_market.tests.testMerchant;
 
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Order;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import web_autotests_cms_market.steps.stepsMerchant.DeliverySteps;
 import web_autotests_cms_market.steps.stepsMerchant.StockSteps;
 import web_autotests_cms_market.steps.TestBase;
@@ -10,6 +8,7 @@ import web_autotests_cms_market.steps.TestBase;
 import static io.qameta.allure.Allure.step;
 
 
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class DeliveryTests extends TestBase {
 
     @Test

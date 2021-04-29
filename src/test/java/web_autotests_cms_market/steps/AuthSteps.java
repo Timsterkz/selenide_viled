@@ -1,4 +1,5 @@
 package web_autotests_cms_market.steps;
+import com.codeborne.selenide.Condition;
 import io.qameta.allure.restassured.AllureRestAssured;
 import io.restassured.http.ContentType;
 import org.openqa.selenium.By;
@@ -14,9 +15,14 @@ public class AuthSteps {
 
     public static void openCms() {
         open(ConfigHelper.getBaseURL()+"/auth/signin");
+
     }
 
     public static void login(){ //логин/пароль
+        $(By.xpath("//input[@placeholder='name@domain.kz']")).waitUntil(Condition.visible, 5000);
+
+
+//        $(By.xpath("//input[@placeholder='name@domain.kz']")).waitWhile(Condition.visible, 2000);
         $(By.xpath("//input[@placeholder='name@domain.kz']")).clear();
         $(By.xpath("//input[@placeholder='name@domain.kz']")).sendKeys(ModeratorEmail);
         $(By.xpath("//input[@placeholder='················']")).clear();
@@ -46,6 +52,7 @@ public class AuthSteps {
         return token;
     }
     public static void closeCms() {
+        $(By.xpath("//*[contains(text(),'Выйти')]")).waitUntil(Condition.visible, 5000);
         $(By.xpath("//*[contains(text(),'Выйти')]")).click();
 
     }

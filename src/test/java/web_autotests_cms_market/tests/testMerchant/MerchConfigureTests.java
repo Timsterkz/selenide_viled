@@ -1,13 +1,12 @@
 package web_autotests_cms_market.tests.testMerchant;
 
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Order;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import web_autotests_cms_market.steps.stepsMerchant.MerchConfigureSteps;
 import web_autotests_cms_market.steps.TestBase;
 
 import static io.qameta.allure.Allure.step;
 
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class MerchConfigureTests extends TestBase {
 //    @Test
 //    @Order(1)

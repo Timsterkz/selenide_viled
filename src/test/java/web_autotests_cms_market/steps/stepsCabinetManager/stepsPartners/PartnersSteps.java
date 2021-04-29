@@ -81,6 +81,9 @@ public class PartnersSteps {
     public static void updatePartnerCommercialCondition() {
         $x("//tbody/tr[2]/td[9]/div/details").click();
         $x("//li[contains(text(),'Коммерческие условия')]").click();
+
+//        $x("//div[4]/div/div[2]//div[1]/span").pressEscape();
+//        $(".css-ils45y").pressEscape();
 //        WebDriver driver =  findElement(By.tagName("body")).sendKeys(Keys.ESCAPE);
 
 //        $(".css-8vsw29").click();

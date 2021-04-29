@@ -10,8 +10,7 @@ import web_autotests_cms_market.steps.AuthSteps;
 import java.util.Arrays;
 import java.util.List;
 
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.$$;
+import static com.codeborne.selenide.Selenide.*;
 import static io.restassured.RestAssured.given;
 
 
@@ -32,10 +31,14 @@ public class StockSteps{
         $(By.xpath("//input[@placeholder='Телефон']")).shouldBe(Condition.disabled);
         $(".controled-select-selection-search-input").click();
         $(".controled-select-selection-search-input").sendKeys("Алматы");
-        Thread.sleep(1500);
+        sleep(1500);
         $(".controled-select-selection-search-input").pressEnter();
         fillFormOfStock();
-        $(By.xpath("//*[contains(text(),'Создать склад')]")).click();
+
+//        $x("//div[4]/div/div[2]//div[2]/div[2]/button").click();
+//        sleep(4000);
+        $x("//div[4]/div/div[2]//div[2]/div[1]/button").click();
+//        $(By.xpath("//button[contains(text(),'Создать склад')]")).click();
     }
 
     public static void fillFormOfStock() {
