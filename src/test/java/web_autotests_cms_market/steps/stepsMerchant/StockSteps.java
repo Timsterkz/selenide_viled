@@ -1,22 +1,28 @@
-package web_autotests_cms_market.steps;
+package web_autotests_cms_market.steps.stepsMerchant;
 
 import com.codeborne.selenide.Condition;
 import io.restassured.http.ContentType;
+import io.restassured.response.Response;
 import org.openqa.selenium.By;
+import web_autotests_cms_market.model.Stock;
+import web_autotests_cms_market.steps.AuthSteps;
 
+import java.util.Arrays;
 import java.util.List;
 
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 import static io.restassured.RestAssured.given;
 
+
 public class StockSteps{
 
     public static void openSectionStock() {
         $("[data-testid='moon-sidebar-route-shop-stocks']").click();
     }
+
     public static void pushButtonCreateStock() {
-        $(By.xpath("//*[@id=\"root\"]/div[1]/main/section/div/div/div[1]/div/button")).click();
+        $(By.xpath("//button[contains(text()[2],'Добавить склад')]")).click();
     }
 
     public static void newStockFillFormOfStock() throws InterruptedException {
@@ -24,14 +30,12 @@ public class StockSteps{
         $(By.xpath("//input[@placeholder='ТРЦ, ТД, БЦ, ЖК']")).shouldBe(Condition.disabled);
         $(By.xpath("//input[@placeholder='Введите название склада']")).shouldBe(Condition.disabled);
         $(By.xpath("//input[@placeholder='Телефон']")).shouldBe(Condition.disabled);
-
         $(".controled-select-selection-search-input").click();
         $(".controled-select-selection-search-input").sendKeys("Алматы");
         Thread.sleep(1500);
         $(".controled-select-selection-search-input").pressEnter();
         fillFormOfStock();
         $(By.xpath("//*[contains(text(),'Создать склад')]")).click();
-
     }
 
     public static void fillFormOfStock() {
@@ -43,7 +47,6 @@ public class StockSteps{
         $(By.xpath("//*[contains(text(),'проспект Достык, 180, Алматы, Казахстан')]")).click();
         $(By.xpath("//input[@placeholder='Телефон']")).click();
         $(By.xpath("//input[@placeholder='Телефон']")).sendKeys(" 702 920 37 58");
-
     }
 
     public static void deleteStock() {
@@ -59,21 +62,18 @@ public class StockSteps{
                 .response();
     }
 
-
     public static void updateStock() throws InterruptedException {
         $(By.xpath("//*[@id=\"root\"]/div[1]/main/section/div/div/div[1]/div/button")).click();
         $(".controled-select-selection-search-input").click();
         $(".controled-select-selection-search-input").sendKeys("Алматы");
         Thread.sleep(1500);
         $(".controled-select-selection-search-input").pressEnter();
-
         $(By.xpath("//input[@placeholder='Офис']")).clear();
         $(By.xpath("//input[@placeholder='ТРЦ, ТД, БЦ, ЖК']")).clear();
         $(By.xpath("//input[@placeholder='Введите название склада']")).clear();
         $(By.xpath("//input[@placeholder='Телефон']")).clear();
         fillFormOfStock();
         $(By.xpath("//*[contains(text(),'Обновить склад')]")).click();
-
     }
 
     public static void checkExistenseOfStocksIfNotCreate() throws InterruptedException {
@@ -90,42 +90,37 @@ public class StockSteps{
         }
         else{
             checkDetailsOfStock();
-
-
-//            class="controled-select-selection-search-input"
-            //*[@id="root"]/div[1]/main/section/div/div/div[1]/div/button/text()[2]
         }
-
-
     }
+
     public static void checkDetailsOfStock() {
            int row = $$(".rc-table-row").size()-1;
-        List<Integer> stocksNumber =
+
+        Response stocksNumber =
+//                Arrays.asList(
                 given()
-                        .contentType(ContentType.JSON)
-                        .auth().oauth2(AuthSteps.loginToken())
+                        .auth()
+                        .oauth2(AuthSteps.loginToken())
                         .when()
                         .log().uri()
                         .get("https://api-test.vlife.kz/market/core/v1/stocks?page=0&pageSize=25")
                         .then()
+//                        .assertThat().body("content[0].pickupAvailable", equalTo(Collections.singletonList(TRUE)))
                         .statusCode(200)
                         .extract()
-                        .response().path("content[0.."+row+"].id");
-        System.out.println(stocksNumber);
-        stocksNumber.forEach(e -> {
-                    $("[data-row-key='" + e.toString() + "']").click();
-//            $(By.className("drawer-content-wrapper")).waitUntil(Condition.not(Condition.visible),5000).isEnabled();
-            $(By.className("css-1wl0hvy")).click();
+                        .response();
+        List<Integer> e = stocksNumber.getBody().jsonPath().getList("content[0.."+row+"].id");
+        System.out.println(e);
+        $("[data-row-key=\"" + e.get(0).toString() + "\"]").shouldBe(Condition.exist);
+//
+//        e.forEach(s -> {
+////            if(s.isPickupAvailable()){
+//
+//
+////            }
+//        });
 
-//            getWebDriver().get("https://cms.test.vlife.kz/shop/stocks");
-        });
 //        $().click();
-
-
-
-
-
-
 //        $("[data-row-key]").click();
 //        List<WebElement> lstRows=getWebDriver().findElements(By.cssSelector("table>tr[rc-table-measure-row]"));
 //

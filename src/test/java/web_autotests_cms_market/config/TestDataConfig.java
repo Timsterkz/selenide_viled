@@ -10,8 +10,9 @@ import org.aeonbits.owner.Config;
 public interface TestDataConfig extends Config {
 
 
-//    @DefaultValue("moderator@codevie.kz")
-    @DefaultValue("testStock@gmail.com")
+//    @DefaultValue("amir.zhakipbekov@gmail.com")
+//    @DefaultValue("testStock@gmail.com")
+    @DefaultValue("moderator@codevie.kz")//test
     String ModeratorEmail();
 
     @DefaultValue("Donishop727@gmail.com")//test

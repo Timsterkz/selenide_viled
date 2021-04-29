@@ -14,8 +14,8 @@ public class AuthSteps {
 
     public static void openCms() {
         open(ConfigHelper.getBaseURL()+"/auth/signin");
-
     }
+
     public static void login(){ //логин/пароль
         $(By.xpath("//input[@placeholder='name@domain.kz']")).clear();
         $(By.xpath("//input[@placeholder='name@domain.kz']")).sendKeys(ModeratorEmail);
@@ -23,13 +23,13 @@ public class AuthSteps {
         $(By.xpath("//input[@placeholder='················']")).sendKeys(password);
 //        $(By.xpath("//input[@placeholder='················']")).pressEnter();
         $(By.xpath("//*[contains(text(),'Войти')]")).click();
-
     }
+
     public static void checkIsMarket(){ //логин/пароль
-        $("[data-testid='moon-sidebar-route']").exists();
-        $(By.xpath("//*[contains(text(),'Магазин')]")).exists();
-
+        $("[data-testid='moon-sidebar-route']").click();
+//        $(By.xpath("//*[contains(text(),'Магазин')]")).exists();
     }
+
 
     public static String loginToken() {
         String token = given()
@@ -45,5 +45,10 @@ public class AuthSteps {
                 .response().path("accessToken");
         return token;
     }
+    public static void closeCms() {
+        $(By.xpath("//*[contains(text(),'Выйти')]")).click();
+
+    }
+
 
 }

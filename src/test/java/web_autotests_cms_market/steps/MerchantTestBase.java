@@ -1,23 +1,17 @@
 package web_autotests_cms_market.steps;
 
-import io.qameta.allure.Step;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.TestInstance;
 
-import static com.codeborne.selenide.Selenide.closeWebDriver;
 import static web_autotests_cms_market.helpers.DriverHelper.configureSelenide;
 import static com.codeborne.selenide.logevents.SelenideLogger.addListener;
 import static io.qameta.allure.Allure.step;
-import static web_autotests_cms_market.helpers.AttachmentsHelper.*;
-import static web_autotests_cms_market.helpers.DriverHelper.*;
-import static web_autotests_cms_market.helpers.EnvironmentHelper.*;
 
 
 @TestInstance(TestInstance.Lifecycle.PER_METHOD)
-public class TestBase {
+public class MerchantTestBase {
 
 
     @BeforeAll
@@ -26,25 +20,23 @@ public class TestBase {
         configureSelenide();
         step("Открыть сайт CMS", AuthSteps::openCms);
         step("Авторизация под мерчантом с ролью модератор", AuthSteps::login);
-        step("Открыть выбор кабинета", AuthSteps::checkIsMarket);
     }
-
     @AfterAll
     public static void close() {
         step("Закрыть CMS", AuthSteps::closeCms);}
 
 
-    @AfterEach
-    @Step("Attachments")
-    public void afterEach(){
-        String sessionId = getSessionId();
-        attachScreenshot("Last screenshot");
-        attachPageSource();
-//        attachNetwork(); // todo
-        if (isWeb) attachAsText("Browser console logs", getConsoleLogs());
-        closeWebDriver();
-        if (isVideoOn) attachVideo(sessionId); // in browserstack video url generates after driver close
-    }
+//    @AfterEach
+//    @Step("Attachments")
+//    public void afterEach(){
+//        String sessionId = getSessionId();
+//        attachScreenshot("Last screenshot");
+//        attachPageSource();
+////        attachNetwork(); // todo
+//        if (isWeb) attachAsText("Browser console logs", getConsoleLogs());
+//        closeWebDriver();
+//        if (isVideoOn) attachVideo(sessionId); // in browserstack video url generates after driver close
+//    }
 //
 //    //Каталог кнопок
 //    SelenideElement saveBtn = $(By.xpath("//*[contains(text(),'Сохранить')]")); //кнопка сохранить
