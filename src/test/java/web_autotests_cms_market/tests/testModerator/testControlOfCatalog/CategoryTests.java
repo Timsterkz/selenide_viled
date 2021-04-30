@@ -10,8 +10,21 @@ import static io.qameta.allure.Allure.step;
 public class CategoryTests extends ModeratorBaseTest {
     @Test
     @Order(1)
-    @DisplayName("Категория")
-    void test() {
+    @DisplayName("Открыть раздел категория")
+    void openCat() {
         step("тест", CategorySteps::openCategory);
     }
+    @Test
+    @Order(2)
+    @DisplayName("Предпросмотр категории")
+    void previewOfCat() {
+        step("тест", CategorySteps::previewOfCategory);
+    }
+    @Test
+    @Order(3)
+    @DisplayName("Нажать на кнопку редактировать категорию")
+    void updateCat() {
+        step("тест", CategorySteps::editCategory);
+    }
+
 }

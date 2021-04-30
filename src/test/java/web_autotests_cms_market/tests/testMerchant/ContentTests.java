@@ -44,7 +44,7 @@ public class ContentTests extends MerchantTestBase {
         step("Перейти в раздел контент", ContentSteps::openContent);
         step("Нажать на кнопку +Загрузить товар", ContentSteps::pushButtonNewItems);
         step("Нажать на кнопку импортировать из файла", ContentSteps::pushButtonImportsFromFile);
-        step("Нажать на кнопку выбрать файл", ContentSteps::pushButtonChooseFile);
+//        step("Нажать на кнопку выбрать файл", ContentSteps::pushButtonChooseFile);
         step("Загрузка файла", ContentSteps::uploadFile);
 
 //        step("Проверить на наличие нераспознанных товаров, при отсутствие загрузить прайслист", ContentSteps::UnrecognizedCheckExistenseIfNotUploadPricelist);

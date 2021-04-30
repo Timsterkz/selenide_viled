@@ -18,20 +18,18 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.logging.Level;
 
-import static cloud.autotests.helpers.EnvironmentHelper.*;
+import static web_autotests_cms_market.helpers.EnvironmentHelper.*;
+
 
 public class CustomWebDriver implements WebDriverProvider {
+
     @Override
     public WebDriver createDriver(DesiredCapabilities capabilities) {
         LoggingPreferences logPrefs = new LoggingPreferences();
         logPrefs.enable(LogType.PERFORMANCE, Level.ALL);
-
-        capabilities.setBrowserName(browser);
         capabilities.setCapability(CapabilityType.LOGGING_PREFS, logPrefs);
         capabilities.setCapability("enableVNC", true);
-        capabilities.setCapability("enableVideo", isVideoOn);
         capabilities.setCapability("videoFrameRate", 24);
-
         // todo implement for other drivers - opera, firefox, safari
         capabilities.setCapability(ChromeOptions.CAPABILITY, getChromeOptions());
         WebDriverManager.chromedriver().setup();

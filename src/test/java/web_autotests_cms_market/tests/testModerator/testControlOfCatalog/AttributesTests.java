@@ -12,6 +12,6 @@ public class AttributesTests extends ModeratorBaseTest {
     @Order(1)
     @DisplayName("Аттрибуты")
     void test() {
-        step("Открыть атрибуты", AttributesSteps::openAttributes);
+        step("Открыть атрибуты", AttributesSteps::openAttributesPage);
     }
 }

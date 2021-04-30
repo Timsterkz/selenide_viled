@@ -28,6 +28,7 @@ public class ContentSteps {
     }
 
     public static void pushButtonNewItems() {
+        sleep(2000);
         $(".css-svds73").click();
     }
 
@@ -35,12 +36,12 @@ public class ContentSteps {
         $(".css-zifcym").click();
 
     }
-    public static void pushButtonChooseFile() {
-        $x(("//*[contains(text(),'Выбрать файл')]")).click();
-    }
+//    public static void pushButtonChooseFile() {
+//        $x(("//*[contains(text(),'Выбрать файл')]")).click();
+//    }
 
     public static void uploadFile() throws InterruptedException {
-        File file = new File("/Users/donchik/Desktop/testStockPricelist11.xlsx");
+        File file = new File("src/test/java/web_autotests_cms_market/files/testStockPricelist11.xlsx");
         $x(("//input[@id='file']")).uploadFile(file);
 //        $(By.xpath("")).sendKeys("/Users/donchik/Desktop/testStockPricelist11.xlsx");
         sleep(6000);

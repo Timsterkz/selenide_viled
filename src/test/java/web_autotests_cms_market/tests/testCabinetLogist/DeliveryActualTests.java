@@ -14,7 +14,7 @@ public class DeliveryActualTests extends TestBase {
     void ContentsPublished() {
         step("Перейти в раздел кабинет логиста", DeliveryActualSteps::openCabinetLogist);
         step("Перейти в раздел Доставка (Актуальные)", DeliveryActualSteps::openDeliveryActual);
-        step("Проверка данных таблиц", DeliveryActualSteps::checkTable);
+        step("Проверка работы выбора всех чекбоксов для переадресации", DeliveryActualSteps::checkBoxRedirect);
 
 //        step("Проверить на наличие опубликованных товаров, при отсутствие подписать", ContentSteps::PublcishedCheckExistenseIfNotSubscribe);
 

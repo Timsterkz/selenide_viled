@@ -19,7 +19,7 @@ public class AuthSteps {
     }
 
     public static void login(){ //логин/пароль
-        $(By.xpath("//input[@placeholder='name@domain.kz']")).waitUntil(Condition.visible, 5000);
+        $(By.xpath("//input[@placeholder='name@domain.kz']")).waitUntil(Condition.visible, 25000);
 
 
 //        $(By.xpath("//input[@placeholder='name@domain.kz']")).waitWhile(Condition.visible, 2000);

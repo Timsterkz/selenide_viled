@@ -5,8 +5,10 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.$x;
+import java.awt.*;
+import java.awt.event.KeyEvent;
+
+import static com.codeborne.selenide.Selenide.*;
 
 public class PartnersSteps {
     public static void openListOfPartners() {
@@ -78,9 +80,24 @@ public class PartnersSteps {
 
     }
 
-    public static void updatePartnerCommercialCondition() {
+    public static void updatePartnerCommercialCondition() throws AWTException {
+        Robot r = new Robot();
         $x("//tbody/tr[2]/td[9]/div/details").click();
         $x("//li[contains(text(),'Коммерческие условия')]").click();
+//        $x("//div[4]/div/div[2]/div/div/div[3]/div[2]/p").click();
+        sleep(2000);
+        $x("//div[4]/div/div[2]//div[3]/div[2]").click();
+        sleep(2000);
+
+//        $x("//div[4]/div/div[2]/div/div/div[2]/div/div[1]/div/div/div[1]").click();
+//        $x("//div[4]/div/div[2]/div/div/div[2]/div/div[1]/div/div/div[2]/div/div[1]").click();
+//        sleep(2000);
+//        $x("//div[4]/div/div[2]/div/div/div[2]/div/div[1]/div/div/div[2]/div/div[1]/div[3]").click();
+//        sleep(2000);
+//        $x("//div[4]/div/div[2]/div/div/div[2]/div/div[1]/div/div/div[2]/div/div[1]/div[3]/div[3]").click();
+
+        r.keyPress(KeyEvent.VK_ESCAPE);
+        r.keyRelease(KeyEvent.VK_ESCAPE);
 
 //        $x("//div[4]/div/div[2]//div[1]/span").pressEscape();
 //        $(".css-ils45y").pressEscape();
