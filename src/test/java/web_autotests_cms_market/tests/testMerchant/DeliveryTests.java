@@ -11,6 +11,8 @@ import static io.qameta.allure.Allure.step;
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class DeliveryTests extends TestBase {
 
+
+
     @Test
     @Order(1)
     @DisplayName("Самовывоз")
@@ -21,7 +23,7 @@ public class DeliveryTests extends TestBase {
 
 //        step("Проверить на наличие точек самовывоза, при отсутствие создать", DeliverySteps::checkDetailsOfPickup);
 //
-        step("Проверка детали точек самовывоза, с данными со списка", DeliverySteps::checkDetailsOfPickup);
+//        step("Проверка детали точек самовывоза, с данными со списка", DeliverySteps::checkDetailsOfPickup);
     }
     @Test
     @Order(2)

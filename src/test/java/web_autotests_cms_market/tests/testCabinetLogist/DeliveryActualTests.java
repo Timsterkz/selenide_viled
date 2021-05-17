@@ -16,8 +16,5 @@ public class DeliveryActualTests extends TestBase {
         step("Перейти в раздел Доставка (Актуальные)", DeliveryActualSteps::openDeliveryActual);
         step("Проверка работы выбора всех чекбоксов для переадресации", DeliveryActualSteps::checkBoxRedirect);
 
-//        step("Проверить на наличие опубликованных товаров, при отсутствие подписать", ContentSteps::PublcishedCheckExistenseIfNotSubscribe);
-
-//        step("Проверка детали своей доставки, с данными со списка", ContentSteps::checkDetailsOfMerchantDelivery);
     }
 }

@@ -25,7 +25,7 @@ public class EnvironmentHelper {
         screenResolution = System.getProperty("screen_resolution", "1360x768"),
         webMobileDevice = System.getProperty("web_mobile_device"),
 //        webMobileDevice = System.getProperty("web_mobile_device", "iPhone X");
-        remoteDriverUrl = System.getProperty("remote_driver_url"), // https://username:password@selenoid.autotests.cloud:4444/wd/hub/
+        remoteDriverUrl = System.getProperty("remote_driver_url", "http://user1:1234@ptf.vlife.kz:8080/wd/hub/"), // https://username:password@selenoid.autotests.cloud:4444/wd/hub/
         videoStorageUrl = System.getProperty("video_storage_url"); // https://selenoid.autotests.cloud/video/
     public static final boolean
         isHeadless = parseBoolean(System.getProperty("headless", "false")),

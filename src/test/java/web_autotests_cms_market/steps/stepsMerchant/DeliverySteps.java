@@ -112,7 +112,7 @@ public class DeliverySteps {
 
     public static void checkDetailsOfPickup()
     {
-        int row = $$(".rc-table-row").size();
+        int row = $$(".rc-table-row").size()+1;
 
         Response stocksNumber =
 //                Arrays.asList(
