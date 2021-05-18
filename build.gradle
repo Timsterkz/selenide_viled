@@ -17,7 +17,7 @@ targetCompatibility = 1.8
 defaultTasks 'help'
 
 ext {
-    allureVersion = "2.13.6"
+    allureVersion = "2.13.8"
     selenideVersion = "5.15.1"
     junitVersion = "5.6.2"
 }
@@ -47,7 +47,7 @@ dependencies {
             "com.fasterxml.jackson.core:jackson-annotations:2.10.3",
             "io.appium:java-client:7.3.0",
             "ch.qos.logback:logback-classic:1.2.3",
-            "io.qameta.allure:allure-ee-junit-platform:3.28.2",
+//            "io.qameta.allure:allure-ee-junit-platform:3.28.2",
             "org.junit.jupiter:junit-jupiter-api:${junitVersion}")
     testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:${junitVersion}"
     compileOnly 'org.projectlombok:lombok:1.18.16'
